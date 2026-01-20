@@ -3,14 +3,14 @@ pipeline {
 
     environment {
         DOCKERHUB_USER = 'tails1982'
-        IMAGE_NAME = 'my-devops-app'
+        IMAGE_NAME = 'my-devops-helm-app'
         IMAGE_TAG = "${BUILD_ID}"
     }
 
     stages {
         stage("Checkout") {
             steps {
-                git branch: 'main', url: 'https://github.com/tailszhang0/my-devops-demo.git'
+                git branch: 'main', url: 'https://github.com/tailszhang0/my-devops-helm-demo.git'
             }
         }
 
@@ -95,7 +95,7 @@ pipeline {
 
                       git remote set-url origin https://${GIT_USER}:${GIT_TOKEN}@github.com/tailszhang0/my-devops-helm-demo.git
 
-                      yq -i '.image.tag = "$IMAGE_TAG"' helm/my-devops-helm-app/values.yaml
+                      yq -i '.image.tag = "'$IMAGE_TAG'"' helm/my-devops-helm-app/values.yaml
 
                       git add helm/my-devops-helm-app/values.yaml
                       git commit -m "chore: update image tag to $IMAGE_TAG"
