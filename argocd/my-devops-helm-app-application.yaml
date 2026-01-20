@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-devops-app
+  name: my-devops-helm-app
   namespace: argocd
 spec:
   project: default
