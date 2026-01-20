@@ -1,12 +1,9 @@
 image:
   repository: tails1982/my-devops-helm-app
-  tag: "latest"
+  tag: "2"
   pullPolicy: IfNotPresent
-
 service:
   type: ClusterIP
   port: 5000
-
 containerPort: 5000
-
 replicaCount: 1
