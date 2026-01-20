@@ -1,0 +1,12 @@
+files except helm folder are copied from project my-devops-demo
+
+helm folder create step:
+1. mkdir helm
+2. cd helm
+3. helm create my-devops-helm-app (create helm structure, then manually
+delete unwanted files, update file content)
+4. cd ..
+5. helm template my-devops-helm-app helm/my-devops-helm-app (remder template locally.
+you can also try
+helm template dev helm/my-app
+helm template prod helm/my-app)
