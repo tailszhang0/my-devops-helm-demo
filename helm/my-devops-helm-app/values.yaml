@@ -1,6 +1,6 @@
 image:
   repository: tails1982/my-devops-helm-app
-  tag: "3"
+  tag: "4"
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
