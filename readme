@@ -1,3 +1,23 @@
+precondition:
+1. jenkins is up
+
+2. argocd is up
+kubectl port-forward svc/argocd-server -n argocd 8081:80
+
+quick start:
+kubectl apply -f argocd/my-devops-helm-app-application.yaml
+kubectl port-forward -n default svc/my-devops-helm-app-service 5000:5000
+
+kubectl delete -f argocd/my-devops-helm-app-application.yaml
+note: delete application only delete the application resource. to delete all related resource:
+kubectl get deployment
+kubectl get rs
+kubectl get pod
+kubectl get service
+kubectl delete deployment my-devops-helm-app
+kubectl delete service my-devops-helm-app-service
+
+
 files except helm folder are copied from project my-devops-demo
 
 helm folder create step:
