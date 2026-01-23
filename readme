@@ -3,6 +3,7 @@ precondition:
 
 2. argocd is up
 kubectl port-forward svc/argocd-server -n argocd 8081:80
+admin/123456
 
 quick start:
 kubectl apply -f argocd/my-devops-helm-app-application.yaml
